@@ -1,0 +1,245 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fernerkundung in der Forstwirtschaft",
+    "section": "",
+    "text": "Willkommen\nDieses Kursbuch ist Teil des freien Wahlmoduls Fernerkundung in der Forstwirtschaft im BSc Studiengang Forstwirtschaft an der Fachhochschule Erfurt.",
+    "crumbs": [
+      "Willkommen"
+    ]
+  },
+  {
+    "objectID": "index.html#aufbau",
+    "href": "index.html#aufbau",
+    "title": "Fernerkundung in der Forstwirtschaft",
+    "section": "Aufbau",
+    "text": "Aufbau\nDas Buch ist als begleitendes Medium zur Grundlagenvorlesung und der Nachbereitung der Übungen am PC gedacht. Der Aufbau orientiert sich am klassischen Ablauf eines Fernerkundungsverfahrens (s. Abbildung 1). Ein Großteil der Übungen widmet sich einer spezifischen Fragestellung aus dem Forstalltag. Dabei stehen sowohl Auswertungen von digitalen Luft- und Satellitenbildern als auch 3D-Daten im Mittelpunkt. Zum Ende der letzten Einheit sollten Sie die erlernten Inhalte auf eigene forstliche Fragestellungen übertragen können.\n\n\n\n\n\n\nAbbildung 1: Grundlegender Ablauf eines Fernerkundungsverfahrens\n\n\n\n\nHinweis zum Einsatz generativer KI: Bei der Erstellung dieses Quartobooks verwendete der Autor OpenAI Codex, um Inhalte zu strukturieren, Formulierungen zu überarbeiten und die technische Umsetzung in Quarto zu unterstützen. Der Autor hat die Inhalte anschließend geprüft und bei Bedarf bearbeitet und übernimmt die volle Verantwortung für die veröffentlichten Inhalte.",
+    "crumbs": [
+      "Willkommen"
+    ]
+  },
+  {
+    "objectID": "einheiten/01-qgis-plugin-installation.html",
+    "href": "einheiten/01-qgis-plugin-installation.html",
+    "title": "1  QGIS und Plugin-Installation",
+    "section": "",
+    "text": "1.1 QGIS und SCP installieren\nIm Modul arbeiten wir durchgehend mit der OpenSource Software QGIS und dem Semi-Automatic Classification Plugin (SCP).\nDas SCP bündelt zentrale Arbeitsschritte der Fernerkundung in QGIS, darunter Vorverarbeitung, Bandverwaltung, Indexberechnungen und Klassifikationsalgorithmen. Wir nutzen es vornehmlich, um insbesondere Satellitendaten vorzubereiten und auszuwerten.",
+    "crumbs": [
+      "Einstieg und Datenaufbereitung",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>QGIS und Plugin-Installation</span>"
+    ]
+  },
+  {
+    "objectID": "einheiten/01-qgis-plugin-installation.html#qgis-und-scp-installieren",
+    "href": "einheiten/01-qgis-plugin-installation.html#qgis-und-scp-installieren",
+    "title": "1  QGIS und Plugin-Installation",
+    "section": "",
+    "text": "1.1.1 QGIS installieren\n\nLaden Sie QGIS von qgis.org herunter.\nNutzen Sie für den Kurs die aktuelle Long Term Release (LTR), sofern auf den Pool-Rechnern nichts anderes vorgegeben ist.\nInstallieren Sie QGIS mit den Standardeinstellungen.\nStarten Sie QGIS und prüfen Sie über Help &gt; About, ob die Installation erfolgreich war.\n\n\n\n1.1.2 QGIS auf Englisch stellen\nDie Übungen verwenden englische Menüpfade, weil Screenshots, QGIS-Dokumentation und das SCP überwiegend englisch sind.\n\nÖffnen Sie Settings &gt; Options….\nWechseln Sie links zu General.\nAktivieren Sie Override system locale.\nWählen Sie als User interface translation English.\nBestätigen Sie mit OK und starten Sie QGIS neu.\n\n\n\n1.1.3 Plugin installieren\n\nÖffnen Sie in QGIS Plugins &gt; Manage and Install Plugins….\nWechseln Sie links auf All.\nGeben Sie in das Suchfeld Semi-Automatic Classification Plugin ein.\nKlicken Sie den Eintrag Semi-Automatic Classification Plugin an. \nKlicken Sie auf Install Plugin.\nWechseln Sie links auf Installed.\nPrüfen Sie, ob beim Semi-Automatic Classification Plugin die Checkbox aktiviert ist.\nSchließen Sie den Plugin Manager.",
+    "crumbs": [
+      "Einstieg und Datenaufbereitung",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>QGIS und Plugin-Installation</span>"
+    ]
+  },
+  {
+    "objectID": "einheiten/01-qgis-plugin-installation.html#projektstruktur",
+    "href": "einheiten/01-qgis-plugin-installation.html#projektstruktur",
+    "title": "1  QGIS und Plugin-Installation",
+    "section": "1.2 Projektstruktur",
+    "text": "1.2 Projektstruktur\nLegen Sie zu Beginn einen lokalen Projektordner an:\nFEFO2627/\n├── 00_projekte/\n├── 01_rohdaten/\n├── 02_vektordaten/\n├── 03_ergebnisse/\n├── 04_layouts/\nArbeiten Sie mit kurzen, sprechenden Dateinamen und dokumentieren Sie Datenquelle, Datum, Koordinatenbezugssystem und Verarbeitungsschritt.\nSpeichern Sie das QGIS-Projekt als einheit_1.qgz.",
+    "crumbs": [
+      "Einstieg und Datenaufbereitung",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>QGIS und Plugin-Installation</span>"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html",
+    "href": "einheiten/glossar.html",
+    "title": "Glossar",
+    "section": "",
+    "text": "A\nDieses Glossar erklärt die wichtigsten Begriffe so, wie sie im Modul verwendet werden. Es ist als Nachschlagehilfe gedacht, nicht als vollständiges Fernerkundungslexikon.\nAccuracy Assessment\nGenauigkeitsprüfung einer Klassifikation. In SCP wird dafür eine Karte mit unabhängigen Referenzdaten verglichen. Ergebnis ist meist eine Fehlermatrix mit Gesamtgenauigkeit sowie Nutzer- und Produzentengenauigkeit.\nAirborne Laserscanning (ALS)\nLaserscanaufnahme aus einem Flugzeug oder Hubschrauber. ALS liefert dreidimensionale Punktwolken und daraus abgeleitete Höhenmodelle.\nArea of Interest (AOI)\nDas Untersuchungsgebiet, auf das Daten zugeschnitten und Analysen bezogen werden. Im Kurs ist das die Saalfelder Höhe im Umfeld von Gösselsdorf.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#b",
+    "href": "einheiten/glossar.html#b",
+    "title": "Glossar",
+    "section": "B",
+    "text": "B\n\nBand\nEin einzelner spektraler Kanal eines Sensors. Sentinel-2 hat zum Beispiel B04 für Rot, B08 für nahes Infrarot und B12 für kurzwelliges Infrarot.\n\nBand set\nEine in SCP definierte Gruppe von Rasterbändern. Das Bandset ist die zentrale Eingabe für Darstellungen, Indizes und Klassifikationen.\nBrandmaske\nRaster- oder Vektorkarte, die mutmaßlich verbrannte Flächen von nicht verbrannten Flächen trennt.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#c",
+    "href": "einheiten/glossar.html#c",
+    "title": "Glossar",
+    "section": "C",
+    "text": "C\n\nCanopy Height Model (CHM)\nVegetationshöhenmodell. Es kann vereinfacht aus DOM minus DGM berechnet werden und beschreibt die Höhe der Oberfläche über dem Gelände.\n\nColor Infrared (CIR)\nFalschfarbenkomposition, bei der nahes Infrarot, Rot und Grün als RGB-Bild dargestellt werden. Vitale Vegetation erscheint dadurch meist sehr deutlich.\nCopernicus Browser\nWebanwendung zur Recherche und zum Download von Sentinel-Daten.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#d",
+    "href": "einheiten/glossar.html#d",
+    "title": "Glossar",
+    "section": "D",
+    "text": "D\n\ndNBR\nDifferenz des Normalized Burn Ratio vor und nach einem Brandereignis. Hohe dNBR-Werte können auf starke Veränderung durch Brand hinweisen.\n\nDigitales Geländemodell (DGM)\nRastermodell der Geländeoberfläche ohne Gebäude und Vegetation.\n\nDigitales Oberflächenmodell (DOM)\nRastermodell der sichtbaren Oberfläche einschließlich Gebäude, Baumkronen und anderer Objekte.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#f",
+    "href": "einheiten/glossar.html#f",
+    "title": "Glossar",
+    "section": "F",
+    "text": "F\nFehlermatrix\nTabelle, die Referenzklassen und Kartenklassen gegenüberstellt. Sie zeigt, welche Klassen gut erkannt werden und wo Verwechslungen auftreten.\nFalschfarbenbild\nDarstellung, bei der Spektralbänder anders als im menschlichen Sehen kombiniert werden, um bestimmte Oberflächen besser sichtbar zu machen.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#g",
+    "href": "einheiten/glossar.html#g",
+    "title": "Glossar",
+    "section": "G",
+    "text": "G\nGeoPackage\nDateiformat für Vektordaten und teilweise auch Rasterdaten. Im Kurs ist es das Standardformat für AOI, ROIs, Validierungspunkte und Ergebnislayer.\nGeoTIFF\nRasterformat mit Georeferenzierung. Im Kurs werden Indexkarten, Klassifikationen und Zwischenergebnisse als GeoTIFF gespeichert.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#k",
+    "href": "einheiten/glossar.html#k",
+    "title": "Glossar",
+    "section": "K",
+    "text": "K\nKlassifikation\nZuordnung von Pixeln zu thematischen Klassen, zum Beispiel Wald, Offenland, Wasser, Siedlung oder Brandfläche.\nKonfusionsmatrix\nSiehe Fehlermatrix.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#l",
+    "href": "einheiten/glossar.html#l",
+    "title": "Glossar",
+    "section": "L",
+    "text": "L\n\nLAZ\nKomprimiertes Dateiformat für LiDAR-Punktwolken. LAZ-Dateien enthalten einzelne Messpunkte mit Koordinaten, Höhe und häufig weiteren Attributen wie Klassifikation oder Intensität.\nLiDAR\nMessverfahren mit Laserimpulsen. In der Forstwirtschaft wichtig für Gelände, Baumhöhen und Bestandesstruktur.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#m",
+    "href": "einheiten/glossar.html#m",
+    "title": "Glossar",
+    "section": "M",
+    "text": "M\nMischpixel\nPixel, dessen Fläche mehrere Oberflächen enthält, zum Beispiel Waldkante, Weg und Boden. Mischpixel können Klassifikationen erschweren.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#n",
+    "href": "einheiten/glossar.html#n",
+    "title": "Glossar",
+    "section": "N",
+    "text": "N\n\nNBR\nNormalized Burn Ratio. Index aus nahem Infrarot und kurzwelligem Infrarot, der häufig für Brand- und Störungsanalysen verwendet wird.\n\nNDMI\nNormalized Difference Moisture Index. Index zur Abschätzung von Vegetations- oder Kronenfeuchte.\n\nNDVI\nNormalized Difference Vegetation Index. Index für Vegetationsaktivität auf Basis von Rot und nahem Infrarot.\nNoData\nWert oder Bereich ohne gültige Rasterinformation. NoData-Flächen dürfen nicht als echte Messwerte interpretiert werden.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#o",
+    "href": "einheiten/glossar.html#o",
+    "title": "Glossar",
+    "section": "O",
+    "text": "O\nOrthophoto\nLuftbild, das geometrisch entzerrt wurde. Es eignet sich im Kurs besonders als visuelle Referenz für Trainings- und Validierungspunkte.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#p",
+    "href": "einheiten/glossar.html#p",
+    "title": "Glossar",
+    "section": "P",
+    "text": "P\nPixel\nKleinste Rasterzelle eines Bildes. Ein Sentinel-2-Pixel mit 10 m Auflösung repräsentiert am Boden ungefähr 100 Quadratmeter.\n\nPunktwolke\nSammlung einzelner 3D-Messpunkte. Aus ALS-Punktwolken lassen sich Gelände, Kronenraum, Bestandeshöhen und vertikale Strukturen ableiten.\nProduzentengenauigkeit\nAnteil der Referenzflächen einer Klasse, die in der Karte richtig erkannt wurden. Sie beschreibt vor allem Auslassungsfehler.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#r",
+    "href": "einheiten/glossar.html#r",
+    "title": "Glossar",
+    "section": "R",
+    "text": "R\nRaster\nDatenmodell aus regelmäßigen Zellen. Satellitenbilder, Indizes und Höhenmodelle sind typische Rasterdaten.\nReferenzdaten\nUnabhängige Informationen, mit denen ein Ergebnis geprüft wird. Beispiele sind Orthophotos, Geländehinweise oder unabhängig gesetzte Validierungspunkte.\n\nROI (Region of Interest)\nTrainings- oder Referenzfläche in SCP. ROIs beschreiben Beispiele für Klassen, aus denen eine überwachte Klassifikation lernt.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#s",
+    "href": "einheiten/glossar.html#s",
+    "title": "Glossar",
+    "section": "S",
+    "text": "S\n\nSCP (Semi-Automatic Classification Plugin)\nQGIS-Plugin für typische Fernerkundungsabläufe: Bandsets, Indizes, Trainingsflächen, Klassifikation und Genauigkeitsprüfung.\nSentinel-2\nEuropäische Satellitenmission mit multispektralen Daten. Sie ist im Kurs die zentrale Datenquelle für Vegetations- und Brandanalysen.\nSpektralsignatur\nMuster der Reflexion über mehrere Bänder hinweg. Unterschiedliche Oberflächen haben oft unterschiedliche Signaturen.\n\nSWIR\nKurzwelliges Infrarot. SWIR-Bänder reagieren unter anderem auf Feuchte, Vegetationszustand und verbrannte Oberflächen.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#t",
+    "href": "einheiten/glossar.html#t",
+    "title": "Glossar",
+    "section": "T",
+    "text": "T\nTrainingsfläche\nBeispielfläche für eine Klasse. Trainingsflächen werden für die überwachte Klassifikation genutzt und müssen von Validierungsdaten getrennt bleiben.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#u",
+    "href": "einheiten/glossar.html#u",
+    "title": "Glossar",
+    "section": "U",
+    "text": "U\nUnüberwachte Klassifikation\nAutomatische Gruppierung von Pixeln nach spektraler Ähnlichkeit. Die Gruppen müssen anschließend inhaltlich interpretiert werden.\nÜberwachte Klassifikation\nKlassifikation mit vorher definierten Trainingsflächen. Die Qualität hängt stark von Klassenlogik, Trainingsdaten und Referenzdaten ab.\nUntersuchungsraum\nRäumlicher Ausschnitt, in dem die Fragestellung bearbeitet wird. Im Modul ist das der Brandfall Saalfelder Höhe/Gösselsdorf.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#v",
+    "href": "einheiten/glossar.html#v",
+    "title": "Glossar",
+    "section": "V",
+    "text": "V\nValidierung\nPrüfung, ob eine Karte belastbar ist. Validierung nutzt unabhängige Referenzdaten und beschreibt Fehler transparent.\nVektordaten\nDatenmodell aus Punkten, Linien und Polygonen. AOI, Wege, ROIs und Validierungspunkte werden im Kurs als Vektordaten geführt.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#w",
+    "href": "einheiten/glossar.html#w",
+    "title": "Glossar",
+    "section": "W",
+    "text": "W\n\nWeb Map Service (WMS)\nStandardisierter Webdienst, der georeferenzierte Kartenbilder über das Internet bereitstellt. Sie können in QGIS angezeigt werden, ohne die zugrunde liegenden Rasterdateien lokal herunterzuladen.",
+    "crumbs": [
+      "Glossar"
+    ]
+  },
+  {
+    "objectID": "einheiten/glossar.html#z",
+    "href": "einheiten/glossar.html#z",
+    "title": "Glossar",
+    "section": "Z",
+    "text": "Z\nZeitreihe\nMehrere Aufnahmen desselben Gebiets zu unterschiedlichen Zeitpunkten. Zeitreihen helfen, Waldveränderungen von Aufnahmeeffekten zu unterscheiden.",
+    "crumbs": [
+      "Glossar"
+    ]
+  }
+]
