@@ -1,0 +1,149 @@
+﻿---
+title: "Forstliche Strukturanalyse mit LiDAR"
+---
+
+::: {.callout-tip .practice-callout title="Praxisauftrag"}
+Für eine Begehung im Steigerwald soll vorab geklärt werden, wo der Bestand hoch
+und geschlossen ist, wo Lücken oder Höhenwechsel auffallen und wo das Gelände
+die Ansprache erschwert. Sie erstellen eine Strukturansicht und ein Profil, mit
+dem sich der Unterschied zwischen Hangform, Kronendach und tatsächlicher
+Bestandeshöhe nachvollziehen lässt.
+:::
+
+## Mögliche Auswertungen
+
+- Hangneigung und Relief als Hinweis auf Befahrbarkeit und Erschließung
+- relative Vegetationshöhe aus [DOM](glossar.qmd#glossar-dom) minus [DGM](glossar.qmd#glossar-dgm)
+- Kronenstruktur, Bestandeslücken und vertikale Schichtung
+- Punktwolken-Transekt durch Bestand, Weg, Lücke oder Hangbereich
+- Höhenprofil des DGM entlang eines forstlich sinnvollen Profils
+
+## Höhendaten in QGIS verarbeiten
+
+Öffnen Sie QGIS und speichern Sie das Projekt als `einheit_10.qgz`.
+
+### XYZ-Höhendaten öffnen
+
+1. Öffnen Sie [Layer > Add Layer > Add Delimited Text Layer...]{.qgis-command}.
+2. Wählen Sie die heruntergeladene [DGM](glossar.qmd#glossar-dgm)-XYZ-Datei.
+3. Stellen Sie **Geometry definition** auf **Point coordinates**.
+4. Wählen Sie die Easting-Spalte als **X field**, die Northing-Spalte als **Y field** und
+   `EPSG:25832` als **Geometry CRS**.
+5. Fügen Sie den Layer hinzu und benennen Sie ihn `dgm_xyz`.
+6. Wiederholen Sie die Schritte für die [DOM](glossar.qmd#glossar-dom)-XYZ-Datei und benennen Sie den
+   Layer `dom_xyz`.
+7. Prüfen Sie, ob beide Punktlayer mit der Steigerwald-AOI und der Punktwolke
+   deckungsgleich liegen.
+
+### XYZ-Punkte in Raster umwandeln
+
+1. Öffnen Sie [Processing > Toolbox]{.qgis-command}.
+2. Suchen Sie in der Processing Toolbox nach `Rasterize`.
+3. Wählen Sie `dgm_xyz` als **Input layer**.
+4. Wählen Sie die Höhen-Spalte als **Field to use for a burn-in value**.
+5. Setzen Sie die Pixelgröße entsprechend der Datenquelle, zum Beispiel `1` m
+   für DGM1 oder `2` m für DGM2.
+6. Speichern Sie die Ausgabe als `dgm_steigerwald.tif`.
+7. Wiederholen Sie die Schritte mit `dom_xyz` und speichern Sie
+   `dom_steigerwald.tif`.
+8. Legen Sie beide Raster im Ordner `02_arbeitsdaten/steigerwald_hoehenmodelle`
+   ab.
+
+### Reliefprodukte erzeugen
+
+1. Laden Sie `dgm_steigerwald.tif` und `dom_steigerwald.tif` in QGIS.
+2. Öffnen Sie [Raster > Analysis > Slope...]{.qgis-command}.
+3. Wählen Sie das DGM als **Input layer**.
+4. Speichern Sie die Ausgabe als `hangneigung_steigerwald.tif`.
+5. Öffnen Sie [Raster > Analysis > Hillshade...]{.qgis-command}.
+6. Speichern Sie die Ausgabe als `schummerung_steigerwald.tif`.
+7. Symbolisieren Sie die Schummerung in Graustufen und legen Sie sie unter
+   DOP20, Punktwolke oder CHM.
+
+### Vegetationshöhe ableiten
+
+1. Öffnen Sie [Raster > Raster Calculator...]{.qgis-command}.
+2. Berechnen Sie:
+   `"dom_steigerwald@1" - "dgm_steigerwald@1"`.
+3. Speichern Sie das Ergebnis als `vegetationshoehe_chm_steigerwald.tif`.
+4. Symbolisieren Sie das CHM mit Klassen, zum Beispiel
+   `0-2 m`, `2-10 m`, `10-20 m`, `>20 m`.
+5. Vergleichen Sie hohe, niedrige und lückige Bestände mit der Punktwolke in 3D.
+
+::: {.callout-note title="Info"}
+Das QGIS-Plugin [TBk](https://github.com/HAFL-WWI/TBk) deckt fast den gesamten Weg vom Vegetationshöhenmodell zur Bestandeskarte ab: Daten vorbereiten, Bestände abgrenzen, Ober- und Maximalhöhe, Deckungsgrad, Grundstruktur und Nadelholzanteil ableiten sowie dichte oder lichte Teilflächen nachbearbeiten. Probieren Sie es einmal mit einem kleinen Ausschnitt aus.
+:::
+
+::: {.callout-note .checkpoint-callout title="Checkpoint"}
+Ein hoher CHM-Wert kann ein geschlossener Bestand sein, aber auch ein einzelner
+hoher Kronenbereich. Woran erkennen Sie, ob die Fläche wirklich flächig
+strukturiert ist?
+:::
+
+## Transekt oder Höhenprofil erstellen
+
+Wählen Sie einen Profilverlauf, der forstlich etwas zeigt: zum Beispiel vom Weg
+in einen Bestand, über eine Bestandeslücke, quer über einen Hang oder durch einen
+Übergang zwischen Nadel- und Laubwald.
+
+::: {.panel-tabset}
+
+### Weg A: Höhenprofil des DGM
+
+1. Öffnen Sie [View > Panels > Elevation Profile]{.qgis-command}.
+2. Fügen Sie `dgm_steigerwald.tif` als Profil-Layer hinzu.
+3. Zeichnen Sie im Map Canvas eine profile line durch den gewünschten Bereich.
+4. Prüfen Sie den Höhenverlauf: Hangform, Kuppe, Senke oder Weganschnitt.
+5. Exportieren oder speichern Sie das Profil als Screenshot für die
+   Projektmappe.
+6. Beschreiben Sie in zwei Sätzen, welche Geländeform das Profil zeigt und
+   warum sie forstlich relevant ist.
+
+### Weg B: Transekt der Punktwolke
+
+1. Öffnen Sie [View > Panels > Elevation Profile]{.qgis-command}.
+2. Fügen Sie die LAZ-Punktwolke als Profil-Layer hinzu.
+3. Zeichnen Sie eine Profillinie quer durch einen Bestand.
+4. Stellen Sie die **Profile tolerance** so ein, dass genügend Punkte erfasst werden,
+   zum Beispiel einige Meter um die Linie.
+5. Prüfen Sie Bodenpunkte, Unterwuchs, Kronenpunkte und Lücken im Profil.
+6. Vergleichen Sie das Punktwolkenprofil mit dem CHM und der 3D-Ansicht.
+7. Speichern Sie das Transekt als Screenshot oder dokumentieren Sie es mit
+   einer kurzen Skizze.
+
+:::
+
+::: {.callout-note title="Info"}
+Das DGM-Höhenprofil zeigt vor allem Geländeform. Das Punktwolken-Transekt zeigt
+zusätzlich die vertikale Waldstruktur. Für die Projektmappe genügt einer der
+beiden Wege, wenn die Interpretation nachvollziehbar ist.
+:::
+
+::: {.callout-note .checkpoint-callout title="Checkpoint"}
+Im Höhenprofil steigt das Gelände deutlich an. Im Kronenhöhenmodell ist der
+Bestand dort aber ähnlich hoch wie im flacheren Bereich. Was sagt Ihnen das über
+Gelände und Vegetation?
+:::
+
+## 3D-Szene nutzen
+
+1. Öffnen Sie [View > New 3D Map View]{.qgis-command}.
+2. Verwenden Sie `dgm_steigerwald.tif` als Terrain.
+3. Aktivieren Sie Punktwolke und CHM.
+4. Stellen Sie **Point size**, **Opacity** und **Vertical scale** so ein, dass
+   Gelände und Kronenraum lesbar bleiben.
+5. Suchen Sie eine Stelle mit deutlichem Strukturunterschied.
+6. Vergleichen Sie 2D-Karte, 3D-Szene und Profil/Transekt.
+7. Formulieren Sie eine forstliche Aussage, die ohne Höheninformation schwächer
+   wäre.
+
+## Abgabe in der Projektmappe
+
+Dokumentieren Sie kompakt:
+
+- verwendete DGM-, DOM- und LAZ-Kachel,
+- CHM-Karte oder Reliefprodukt,
+- ein Höhenprofil oder Punktwolken-Transekt,
+- kurze Interpretation zu Gelände, Bestandeshöhe oder Kronenstruktur,
+- Hinweis auf Unsicherheiten, zum Beispiel Mischbestände, Punktdichte oder
+  Randbereiche.

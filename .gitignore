@@ -1,0 +1,29 @@
+# Quarto-Ausgabe und lokale Zwischendateien
+/_book/
+/.quarto/
+/_freeze/
+/*_cache/
+/*_files/
+
+# Lokale R- und RStudio-Dateien
+.RData
+.Rhistory
+.Rproj.user/
+
+# Große lokale Fernerkundungsdaten
+/Sentinel-Daten/
+
+# Temporäre Dateien von QGIS und GeoPackage
+*.qgz~
+*.qgs~
+*.gpkg-shm
+*.gpkg-wal
+
+# Betriebssystem und Editoren
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+
+**/*.quarto_ipynb

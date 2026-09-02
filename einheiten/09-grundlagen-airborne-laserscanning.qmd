@@ -1,0 +1,116 @@
+﻿---
+title: "Grundlagen des Airborne Laserscannings"
+---
+
+::: {.callout-tip .practice-callout title="Praxisauftrag"}
+Im Steigerwald reicht das Luftbild für manche Revierfragen nicht aus: Hanglagen,
+Kuppen, kleine Senken, Bestandesränder und Kronenräume sind zweidimensional nur
+schwer zu beurteilen. Für eine erste Bürovorbereitung sollen die passenden
+Höhendaten beschafft werden, damit Gelände und Waldstruktur später gemeinsam
+betrachtet werden können.
+:::
+
+## Kernbegriffe
+
+- [Punktwolke](glossar.qmd#glossar-punktwolke)
+- [LAZ](glossar.qmd#glossar-laz)
+- First Return, Last Return und Mehrfachreturns
+- digitales Geländemodell ([DGM](glossar.qmd#glossar-dgm))
+- digitales Oberflächenmodell ([DOM](glossar.qmd#glossar-dom))
+- [Canopy Height Model (CHM)](glossar.qmd#glossar-chm)
+- Punktdichte und Bodenpunktklassifikation
+
+## Forstlicher Bezug
+
+Optische Sentinel-2-Daten zeigen vor allem spektrale Unterschiede. ALS beschreibt
+dagegen die dreidimensionale Struktur: Geländeform, Kronenhöhe,
+Bestandesdichte, Lücken, Hangneigung und vertikale Schichtung. Für forstliche
+Interpretationen ist diese Strukturinformation besonders wertvoll, weil sie
+direkt mit Befahrbarkeit, Erschließung, Baumhöhen und Bestandesaufbau verbunden
+ist.
+
+## Datenquelle Thüringen
+
+Für Thüringen stellt das TLBG Höhendaten als Digitales Geländemodell ([DGM](glossar.qmd#glossar-dgm)),
+Digitales Oberflächenmodell ([DOM](glossar.qmd#glossar-dom)) und
+Airborne-Laserscandaten als LAZ-Punktwolken bereit.
+
+Wichtige Links:
+
+- [Download Höhendaten im Geoportal Thüringen](https://geoportal.thueringen.de/gdi-th/download-offene-geodaten/download-hoehendaten)
+- [Informationen zum Download von Höhendaten](https://geoportal.geoportal-th.de/gaialight-th/_apps/dladownload/dl-dhm-info.html)
+- [Übersicht Digitale Geländemodelle DGM](https://tlbg-onlineshop.thueringen.de/onlineshop/uebersichten/digitale-gelaendemodelle-dgm)
+- [Übersicht Digitale Oberflächenmodelle DOM](https://tlbg-onlineshop.thueringen.de/onlineshop/uebersichten/digitale-oberflaechenmodelle)
+
+| Produkt | Bedeutung | Nutzung in der Übung |
+|---|---|---|
+| DGM | Gelände ohne Bewuchs und Bauwerke | Relief, Höhenprofil, Hangneigung |
+| DOM | Oberfläche inklusive Vegetation und Bauwerke | Kronendach, Bestandeshöhen |
+| LAZ | klassifizierte Punktwolke | 3D-Szene, Punktwolken-Transekt |
+
+::: {.callout-note title="Info"}
+DGM, DOM und LAZ müssen denselben Bereich im Steigerwald abdecken. Arbeiten Sie
+lieber mit wenigen Kacheln, die sicher zusammenpassen, als mit einem zu großen
+Datensatz.
+:::
+
+::: {.callout-note .checkpoint-callout title="Checkpoint"}
+DGM, DOM und Punktwolke liegen im selben Gebiet, stammen aber nicht zwingend aus
+demselben Aufnahmezeitpunkt. Welche Unterschiede könnten dadurch in einer
+Strukturanalyse sichtbar werden?
+:::
+
+## DGM, DOM und LAZ herunterladen
+
+1. Öffnen Sie den [Downloadbereich Höhendaten](https://geoportal.thueringen.de/gdi-th/download-offene-geodaten/download-hoehendaten).
+2. Suchen Sie den Untersuchungsraum `Steigerwald` oder zoomen Sie zum
+   vereinbarten Kursausschnitt.
+3. Aktivieren Sie die Tile overview für Höhendaten.
+4. Wählen Sie eine kleine Anzahl Kacheln, idealerweise einen 1-km-Ausschnitt.
+5. Laden Sie für diese Kachel ein DGM herunter, möglichst `DGM1` oder `DGM2`.
+6. Laden Sie für dieselbe Kachel ein DOM herunter, möglichst `DOM1` oder `DOM2`.
+7. Laden Sie zusätzlich die zugehörigen Airborne-Laserscandaten als `.laz` oder
+   `.las`, falls verfügbar.
+8. Speichern Sie die Dateien in:
+   `01_rohdaten/steigerwald_als`.
+9. Entpacken Sie ZIP-Dateien.
+10. Notieren Sie Produkt, Kachelname, Aktualität, Rasterweite oder Punktdichte,
+    Koordinatenbezugssystem und Quelle.
+
+## Punktwolke in QGIS öffnen
+
+1. Öffnen Sie QGIS und speichern Sie das Projekt als
+   `einheit_9.qgz`.
+2. Wählen Sie [Layer > Add Layer > Add Point Cloud Layer...]{.qgis-command}.
+3. Wählen Sie die heruntergeladene `.laz`- oder `.las`-Datei.
+4. Fügen Sie den Layer hinzu.
+5. Prüfen Sie mit Rechtsklick auf den Punktwolkenlayer über
+   [Properties > Information]{.qgis-command}:
+   Coordinate reference system, point count, extent and attributes.
+6. Symbolisieren Sie die Punktwolke zunächst nach **Height/Z**.
+7. Wechseln Sie danach testweise auf eine **Classification**-Symbolisierung, falls
+   Bodenpunkte, Vegetation oder Gebäude als Klassen vorliegen.
+
+::: {.callout-tip title="Info"}
+Aktuelle QGIS-Versionen können Punktwolken direkt laden. Falls die Datei nicht
+erscheint, prüfen Sie zuerst den Dateipfad, das Koordinatenbezugssystem und ob
+die Datei noch in einem ZIP-Archiv liegt.
+:::
+
+## Erste 3D-Szene erstellen
+
+1. Öffnen Sie [View > New 3D Map View]{.qgis-command}.
+2. Öffnen Sie in der 3D-Ansicht **Configure...**.
+3. Wählen Sie als **Terrain** zunächst **DGM** oder später das gerasterte DGM.
+4. Setzen Sie eine moderate **Vertical scale**, zum Beispiel `1.5`.
+5. Aktivieren Sie die Punktwolke in der 3D-Ansicht.
+6. Reduzieren Sie bei Bedarf **Point size**, bis Waldstruktur und Gelände
+   lesbar werden.
+7. Navigieren Sie entlang eines Hanges oder Bestandesrandes und beschreiben Sie,
+   welche Struktur im 2D Map Canvas weniger deutlich sichtbar ist.
+
+::: {.callout-note .checkpoint-callout title="Checkpoint"}
+In der 3D-Ansicht wirkt ein Bestand sehr hoch. Liegt das an hoher Vegetation,
+an steilem Gelände oder an beidem?
+:::
+

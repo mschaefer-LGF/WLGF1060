@@ -1,0 +1,276 @@
+/*-- scss:defaults --*/
+$body-bg: #101817;
+$body-color: #e8eeee;
+$link-color: #73d3cb;
+$primary: #73d3cb;
+$headings-color: #f2f7f6;
+$sidebar-bg: #16211f;
+$border-color: #30413e;
+$code-bg: #16211f;
+$code-color: #e8eeee;
+$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+/*-- scss:rules --*/
+.title {
+  color: #f2f7f6;
+}
+
+.subtitle {
+  color: #b7c4c1;
+}
+
+a {
+  text-decoration-color: rgba(115, 211, 203, 0.45);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: #9ce5df;
+}
+
+#quarto-sidebar {
+  background: #16211f;
+  border-right: 1px solid #30413e;
+}
+
+#quarto-sidebar .sidebar-title,
+#quarto-sidebar .sidebar-item-section > .sidebar-item-container .menu-text {
+  color: #f2f7f6;
+}
+
+#quarto-sidebar .sidebar-item .sidebar-item-text,
+#quarto-sidebar .sidebar-item a {
+  color: #d7e1df;
+}
+
+#quarto-sidebar .sidebar-item a:hover .sidebar-item-text,
+#quarto-sidebar .sidebar-item a.active .sidebar-item-text,
+#quarto-sidebar .sidebar-item a:hover .menu-text,
+#quarto-sidebar .sidebar-item a.active .menu-text {
+  color: #73d3cb;
+}
+
+#quarto-sidebar .sidebar-item a.active {
+  border-left-color: #73d3cb;
+}
+
+#quarto-sidebar .sidebar-search input {
+  color: #e8eeee;
+  background: #101817;
+  border-color: #3a4c49;
+}
+
+#quarto-sidebar .sidebar-search input::placeholder {
+  color: #9aa8a5;
+}
+
+.quarto-secondary-nav,
+.quarto-secondary-nav .quarto-btn-toggle {
+  background: #07100f;
+  color: #f2f7f6;
+}
+
+.callout {
+  border-radius: 0;
+  background: #182421;
+  border-color: #30413e;
+  box-shadow: none;
+}
+
+.callout.callout-style-default,
+.callout.callout-style-default .callout-header {
+  background: #182421;
+}
+
+.callout.callout-style-default.callout-tip {
+  border-left-color: #30413e;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.callout.callout-style-default.callout-tip > .callout-header {
+  background: transparent;
+}
+
+.callout.callout-style-default.callout-note {
+  border-left-color: #30413e;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.callout.callout-style-default.callout-note > .callout-header {
+  background: transparent;
+}
+
+.callout.callout-style-default.callout-important {
+  border-left-color: #30413e;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.callout.callout-style-default.callout-important > .callout-header {
+  background: transparent;
+}
+
+.callout.callout-style-default.callout-warning {
+  border-color: #d8a34a;
+}
+
+.callout.callout-style-default.callout-caution {
+  border-left-color: #30413e;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.callout.callout-style-default.callout-caution > .callout-header {
+  background: transparent;
+}
+
+.callout.callout-style-default.callout-tip,
+.callout.callout-style-default.callout-note:not(.checkpoint-callout):not(.practice-callout),
+.callout.callout-style-default.callout-important,
+.callout.callout-style-default.callout-caution {
+  background: transparent;
+}
+
+.callout.callout-style-default .callout-title-container {
+  color: #f2f7f6;
+  font-weight: 700;
+}
+
+.callout.callout-style-default {
+  border-left-width: 5px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.callout.callout-style-default > .callout-header {
+  border-bottom: 0;
+  border-radius: 0;
+  opacity: 0.85;
+}
+
+.callout .callout-icon-container,
+.callout .callout-icon,
+.callout .callout-icon::before {
+  display: none;
+}
+
+.qgis-command {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+}
+
+.callout.callout-style-default.checkpoint-callout {
+  border-color: #6ab0de;
+  border-width: 2.5px;
+}
+
+.callout.callout-style-default.checkpoint-callout > .callout-header {
+  background: #182421;
+  opacity: 1;
+}
+
+.callout.callout-style-default.practice-callout {
+  background: #182421;
+  border-color: #bfe85b;
+  border-width: 2.5px;
+}
+
+.callout.callout-style-default.practice-callout > .callout-header {
+  background: #182421;
+  opacity: 1;
+}
+
+.callout.callout-style-default.callout-warning {
+  border-color: #ff7a45;
+  border-width: 2.5px;
+}
+
+.callout.callout-style-default.callout-warning > .callout-header {
+  background: #182421;
+  opacity: 1;
+}
+
+.callout.callout-style-default.checkpoint-callout > .callout-header,
+.callout.callout-style-default.callout-warning > .callout-header {
+  display: none !important;
+}
+
+#fig-ndvi-meiningen-vergleich .ndvi-comparison-image {
+  display: block;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  #fig-ndvi-meiningen-vergleich .ndvi-comparison-image {
+    width: auto !important;
+    height: 275px !important;
+  }
+}
+
+.exercise {
+  border: 1px solid #30413e;
+  border-left: 5px solid #73d3cb;
+  border-radius: 2px;
+  background: #121d1b;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.exercise::before {
+  content: "Praxisauftrag";
+  display: block;
+  color: #f2f7f6;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.checkpoint {
+  border-left: 5px solid #6ab0de;
+  background: #142536;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+table {
+  background: #121d1b;
+}
+
+table > thead > tr > th {
+  color: #f2f7f6;
+  background: #07100f;
+  border-color: #30413e;
+}
+
+table > tbody > tr:nth-of-type(even) {
+  background: #16211f;
+}
+
+code {
+  border: 1px solid #30413e;
+  border-radius: 2px;
+}
+
+pre code {
+  border: 0;
+}
+.ai-disclaimer {
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}

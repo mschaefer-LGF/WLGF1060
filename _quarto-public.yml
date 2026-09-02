@@ -1,0 +1,13 @@
+project:
+  render:
+    - einheiten/01-qgis-plugin-installation.qmd
+    - einheiten/glossar.qmd
+
+book:
+  chapters:
+    - part: "Einstieg und Datenaufbereitung"
+      chapters:
+        - href: einheiten/01-qgis-plugin-installation.qmd
+          text: "QGIS und Plugin-Installation"
+    - href: einheiten/glossar.qmd
+      text: "Glossar"

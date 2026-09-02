@@ -1,0 +1,46 @@
+project:
+  render:
+    - einheiten/01-qgis-plugin-installation.qmd
+    - einheiten/02-recherche-download-satellitenbild.qmd
+    - einheiten/03-vorverarbeitung.qmd
+    - einheiten/04-vegetationsanalyse.qmd
+    - einheiten/05-waldbrandanalyse.qmd
+    - einheiten/06-ueberwachte-klassifikation.qmd
+    - einheiten/07-genauigkeitsanalyse.qmd
+    - einheiten/08-veraenderungsanalyse.qmd
+    - einheiten/09-grundlagen-airborne-laserscanning.qmd
+    - einheiten/10-forstliche-strukturanalyse-lidar.qmd
+    - einheiten/glossar.qmd
+
+book:
+  chapters:
+    - part: "Einstieg und Datenaufbereitung"
+      chapters:
+        - href: einheiten/01-qgis-plugin-installation.qmd
+          text: "QGIS und Plugin-Installation"
+        - href: einheiten/02-recherche-download-satellitenbild.qmd
+          text: "Recherche und Download eines Satellitenbildes"
+        - href: einheiten/03-vorverarbeitung.qmd
+          text: "Vorverarbeitung"
+    - part: "Spektralindizes"
+      chapters:
+        - href: einheiten/04-vegetationsanalyse.qmd
+          text: "Vegetationsanalyse"
+        - href: einheiten/05-waldbrandanalyse.qmd
+          text: "Waldbrandanalyse"
+    - part: "Waldflächen kartieren und Veränderungen erfassen"
+      chapters:
+        - href: einheiten/06-ueberwachte-klassifikation.qmd
+          text: "Überwachte Klassifikation"
+        - href: einheiten/07-genauigkeitsanalyse.qmd
+          text: "Genauigkeitsanalyse"
+        - href: einheiten/08-veraenderungsanalyse.qmd
+          text: "Veränderungsanalyse"
+    - part: "Waldstrukturanalyse"
+      chapters:
+        - href: einheiten/09-grundlagen-airborne-laserscanning.qmd
+          text: "Grundlagen des Airborne Laserscannings"
+        - href: einheiten/10-forstliche-strukturanalyse-lidar.qmd
+          text: "Forstliche Strukturanalyse mit LiDAR"
+    - href: einheiten/glossar.qmd
+      text: "Glossar"

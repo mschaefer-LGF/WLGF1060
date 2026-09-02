@@ -1,0 +1,65 @@
+---
+title: "QGIS und Plugin-Installation"
+---
+
+## QGIS und SCP installieren
+
+Im Modul arbeiten wir durchgehend mit der OpenSource Software **QGIS** und dem
+**Semi-Automatic Classification Plugin ([SCP](glossar.qmd#glossar-scp))**.
+
+Das SCP bündelt zentrale Arbeitsschritte der Fernerkundung in QGIS, darunter
+Vorverarbeitung, Bandverwaltung, Indexberechnungen und Klassifikationsalgorithmen. Wir nutzen es vornehmlich, um insbesondere Satellitendaten vorzubereiten und auszuwerten.
+
+
+### QGIS installieren
+
+1. Laden Sie QGIS von [qgis.org](https://qgis.org/download/) herunter.
+2. Nutzen Sie für den Kurs die aktuelle **Long Term Release (LTR)**, sofern auf
+   den Pool-Rechnern nichts anderes vorgegeben ist.
+3. Installieren Sie QGIS mit den Standardeinstellungen.
+4. Starten Sie QGIS und prüfen Sie über [Help > About]{.qgis-command}, ob die
+   Installation erfolgreich war.
+
+### QGIS auf Englisch stellen
+
+Die Übungen verwenden englische Menüpfade, weil Screenshots, QGIS-Dokumentation
+und das SCP überwiegend englisch sind.
+
+1. Öffnen Sie [Settings > Options...]{.qgis-command}.
+2. Wechseln Sie links zu **General**.
+3. Aktivieren Sie **Override system locale**.
+4. Wählen Sie als **User interface translation** `English`.
+5. Bestätigen Sie mit **OK** und starten Sie QGIS neu.
+
+### Plugin installieren
+
+1. Öffnen Sie in QGIS [Plugins > Manage and Install Plugins...]{.qgis-command}.
+2. Wechseln Sie links auf **All**.
+3. Geben Sie in das Suchfeld `Semi-Automatic Classification Plugin` ein.
+4. Klicken Sie den Eintrag **Semi-Automatic Classification Plugin** an.
+   ![Icon des Semi-Automatic Classification Plugin](../assets/icons/scp-icon.png){fig-alt="Quadratisches Icon des Semi-Automatic Classification Plugin" width="26px" style="vertical-align: middle; margin-left: 0.3rem;"}
+5. Klicken Sie auf **Install Plugin**.
+6. Wechseln Sie links auf **Installed**.
+7. Prüfen Sie, ob beim **Semi-Automatic Classification Plugin** die Checkbox
+   aktiviert ist.
+8. Schließen Sie den Plugin Manager.
+
+
+## Projektstruktur
+
+Legen Sie zu Beginn einen lokalen Projektordner an:
+
+```text
+FEFO2627/
+├── 00_projekte/
+├── 01_rohdaten/
+├── 02_vektordaten/
+├── 03_ergebnisse/
+├── 04_layouts/
+```
+
+Arbeiten Sie mit kurzen, sprechenden Dateinamen und dokumentieren Sie Datenquelle, Datum,
+Koordinatenbezugssystem und Verarbeitungsschritt.
+
+Speichern Sie das QGIS-Projekt als `einheit_1.qgz`.
+

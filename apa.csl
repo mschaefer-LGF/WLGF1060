@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="de-DE">
+  <info>
+    <title>Minimal APA-like</title>
+    <id>https://example.com/minimal-apa-like</id>
+    <updated>2026-05-27T00:00:00+00:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". "/>
+      <substitute>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <text macro="author"/>
+      <text macro="year" prefix=", "/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout suffix=".">
+      <text macro="author"/>
+      <text macro="year" prefix=" (" suffix="). "/>
+      <text variable="title"/>
+      <text variable="URL" prefix=". "/>
+    </layout>
+  </bibliography>
+</style>

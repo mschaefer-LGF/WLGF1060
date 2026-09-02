@@ -1,0 +1,47 @@
+project:
+  type: book
+  output-dir: _book
+  render:
+    - index.qmd
+
+book:
+  title: "Fernerkundung in der Forstwirtschaft"
+ # subtitle: "Waldbrandanalyse Saalfelder Höhe mit QGIS und dem Semi-Automatic Classification Plugin"
+  author: "Prof. Dr. Mathias Schaefer"
+  search: true
+  page-navigation: true
+  repo-url: https://github.com/mschaefer-LGF/WLGF1060
+  repo-actions: [source, issue]
+  sidebar:
+    title: "&nbsp;"
+    logo: assets/FE-FO-Logo.svg
+    style: docked
+    background: "#f3f6f6"
+  chapters:
+    - index.qmd
+
+format:
+  html:
+    theme:
+      light:
+        - cosmo
+        - styles.scss
+      dark:
+        - darkly
+        - styles-dark.scss
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    code-tools: false
+    fig-cap-location: bottom
+    link-external-icon: true
+    link-external-newwindow: true
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+
+lang: de

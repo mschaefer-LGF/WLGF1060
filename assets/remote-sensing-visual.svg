@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Fernerkundung und Waldmonitoring</title>
+  <desc id="desc">Ein Satellit erfasst eine gegliederte Waldlandschaft in mehreren Spektralbändern.</desc>
+  <rect width="900" height="620" fill="#fefefe"/>
+  <path d="M0 420L180 310l170 88 170-132 190 98 190-118v374H0Z" fill="#cfe6e3"/>
+  <path d="M0 492l176-94 166 70 178-105 188 78 192-91v270H0Z" fill="#43a299"/>
+  <path d="M0 548l190-64 150 51 190-76 180 58 190-74v177H0Z" fill="#0b1817"/>
+  <path d="M180 310l10 174M350 398l-10 137M520 266l10 193M710 364v153" stroke="#fefefe" stroke-width="7"/>
+  <g transform="translate(520 75) rotate(-12)">
+    <rect x="80" y="34" width="150" height="86" rx="6" fill="#0b1817"/>
+    <rect x="0" y="48" width="72" height="58" fill="#2980b9"/>
+    <rect x="238" y="48" width="72" height="58" fill="#2980b9"/>
+    <circle cx="155" cy="77" r="24" fill="#43a299"/>
+    <path d="M155 120v62" stroke="#0b1817" stroke-width="12"/>
+  </g>
+  <path d="M655 245L470 425M680 252L610 460M705 246L760 426" stroke="#43a299" stroke-width="8" stroke-dasharray="14 14" opacity=".85"/>
+  <rect x="65" y="72" width="335" height="126" fill="#fefefe" stroke="#0b1817" stroke-width="4"/>
+  <path d="M100 112h205M100 148h260" stroke="#0b1817" stroke-width="10" stroke-linecap="round"/>
+</svg>

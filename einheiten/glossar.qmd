@@ -1,0 +1,257 @@
+# Glossar {.unnumbered}
+
+Dieses Glossar erklärt die wichtigsten Begriffe so, wie sie im Modul verwendet
+werden. Es ist als Nachschlagehilfe gedacht, nicht als vollständiges
+Fernerkundungslexikon.
+
+## A {.unnumbered}
+
+<span id="glossar-accuracy-assessment"></span>
+
+**Accuracy Assessment**  
+Genauigkeitsprüfung einer Klassifikation. In SCP wird dafür eine Karte mit
+unabhängigen Referenzdaten verglichen. Ergebnis ist meist eine Fehlermatrix mit
+Gesamtgenauigkeit sowie Nutzer- und Produzentengenauigkeit.
+
+<span id="glossar-als"></span>
+
+**Airborne Laserscanning (ALS)**  
+Laserscanaufnahme aus einem Flugzeug oder Hubschrauber. ALS liefert
+dreidimensionale Punktwolken und daraus abgeleitete Höhenmodelle.
+
+<span id="glossar-aoi"></span>
+
+**Area of Interest (AOI)**  
+Das Untersuchungsgebiet, auf das Daten zugeschnitten und Analysen bezogen
+werden. Im Kurs ist das die Saalfelder Höhe im Umfeld von Gösselsdorf.
+
+## B {.unnumbered}
+
+<span id="glossar-band"></span>
+
+**Band**  
+Ein einzelner spektraler Kanal eines Sensors. Sentinel-2 hat zum Beispiel B04
+für Rot, B08 für nahes Infrarot und B12 für kurzwelliges Infrarot.
+
+<span id="glossar-band-set"></span>
+
+**Band set**  
+Eine in SCP definierte Gruppe von Rasterbändern. Das Bandset ist die zentrale
+Eingabe für Darstellungen, Indizes und Klassifikationen.
+
+**Brandmaske**  
+Raster- oder Vektorkarte, die mutmaßlich verbrannte Flächen von nicht
+verbrannten Flächen trennt.
+
+## C {.unnumbered}
+
+<span id="glossar-chm"></span>
+
+**Canopy Height Model (CHM)**  
+Vegetationshöhenmodell. Es kann vereinfacht aus DOM minus DGM berechnet werden
+und beschreibt die Höhe der Oberfläche über dem Gelände.
+
+<span id="glossar-cir"></span>
+
+**Color Infrared (CIR)**  
+Falschfarbenkomposition, bei der nahes Infrarot, Rot und Grün als RGB-Bild
+dargestellt werden. Vitale Vegetation erscheint dadurch meist sehr deutlich.
+
+**Copernicus Browser**  
+Webanwendung zur Recherche und zum Download von Sentinel-Daten.
+
+## D {.unnumbered}
+
+<span id="glossar-dnbr"></span>
+
+**dNBR**  
+Differenz des Normalized Burn Ratio vor und nach einem Brandereignis. Hohe
+dNBR-Werte können auf starke Veränderung durch Brand hinweisen.
+
+<span id="glossar-dgm"></span>
+
+**Digitales Geländemodell (DGM)**  
+Rastermodell der Geländeoberfläche ohne Gebäude und Vegetation.
+
+<span id="glossar-dom"></span>
+
+**Digitales Oberflächenmodell (DOM)**  
+Rastermodell der sichtbaren Oberfläche einschließlich Gebäude, Baumkronen und
+anderer Objekte.
+
+## F {.unnumbered}
+
+**Fehlermatrix**  
+Tabelle, die Referenzklassen und Kartenklassen gegenüberstellt. Sie zeigt,
+welche Klassen gut erkannt werden und wo Verwechslungen auftreten.
+
+**Falschfarbenbild**  
+Darstellung, bei der Spektralbänder anders als im menschlichen Sehen kombiniert
+werden, um bestimmte Oberflächen besser sichtbar zu machen.
+
+## G {.unnumbered}
+
+**GeoPackage**  
+Dateiformat für Vektordaten und teilweise auch Rasterdaten. Im Kurs ist es das
+Standardformat für AOI, ROIs, Validierungspunkte und Ergebnislayer.
+
+**GeoTIFF**  
+Rasterformat mit Georeferenzierung. Im Kurs werden Indexkarten,
+Klassifikationen und Zwischenergebnisse als GeoTIFF gespeichert.
+
+## K {.unnumbered}
+
+**Klassifikation**  
+Zuordnung von Pixeln zu thematischen Klassen, zum Beispiel Wald, Offenland,
+Wasser, Siedlung oder Brandfläche.
+
+**Konfusionsmatrix**  
+Siehe Fehlermatrix.
+
+## L {.unnumbered}
+
+<span id="glossar-laz"></span>
+
+**LAZ**  
+Komprimiertes Dateiformat für LiDAR-Punktwolken. LAZ-Dateien enthalten einzelne
+Messpunkte mit Koordinaten, Höhe und häufig weiteren Attributen wie
+Klassifikation oder Intensität.
+
+**LiDAR**  
+Messverfahren mit Laserimpulsen. In der Forstwirtschaft wichtig für Gelände,
+Baumhöhen und Bestandesstruktur.
+
+## M {.unnumbered}
+
+**Mischpixel**  
+Pixel, dessen Fläche mehrere Oberflächen enthält, zum Beispiel Waldkante,
+Weg und Boden. Mischpixel können Klassifikationen erschweren.
+
+## N {.unnumbered}
+
+<span id="glossar-nbr"></span>
+
+**NBR**  
+Normalized Burn Ratio. Index aus nahem Infrarot und kurzwelligem Infrarot, der
+häufig für Brand- und Störungsanalysen verwendet wird.
+
+<span id="glossar-ndmi"></span>
+
+**NDMI**  
+Normalized Difference Moisture Index. Index zur Abschätzung von Vegetations-
+oder Kronenfeuchte.
+
+<span id="glossar-ndvi"></span>
+
+**NDVI**  
+Normalized Difference Vegetation Index. Index für Vegetationsaktivität auf
+Basis von Rot und nahem Infrarot.
+
+**NoData**  
+Wert oder Bereich ohne gültige Rasterinformation. NoData-Flächen dürfen nicht
+als echte Messwerte interpretiert werden.
+
+## O {.unnumbered}
+
+**Orthophoto**  
+Luftbild, das geometrisch entzerrt wurde. Es eignet sich im Kurs besonders als
+visuelle Referenz für Trainings- und Validierungspunkte.
+
+## P {.unnumbered}
+
+**Pixel**  
+Kleinste Rasterzelle eines Bildes. Ein Sentinel-2-Pixel mit 10 m Auflösung
+repräsentiert am Boden ungefähr 100 Quadratmeter.
+
+<span id="glossar-punktwolke"></span>
+
+**Punktwolke**  
+Sammlung einzelner 3D-Messpunkte. Aus ALS-Punktwolken lassen sich Gelände,
+Kronenraum, Bestandeshöhen und vertikale Strukturen ableiten.
+
+**Produzentengenauigkeit**  
+Anteil der Referenzflächen einer Klasse, die in der Karte richtig erkannt
+wurden. Sie beschreibt vor allem Auslassungsfehler.
+
+## R {.unnumbered}
+
+**Raster**  
+Datenmodell aus regelmäßigen Zellen. Satellitenbilder, Indizes und
+Höhenmodelle sind typische Rasterdaten.
+
+**Referenzdaten**  
+Unabhängige Informationen, mit denen ein Ergebnis geprüft wird. Beispiele sind
+Orthophotos, Geländehinweise oder unabhängig gesetzte Validierungspunkte.
+
+<span id="glossar-roi"></span>
+
+**ROI (Region of Interest)**  
+Trainings- oder Referenzfläche in SCP. ROIs beschreiben Beispiele für Klassen,
+aus denen eine überwachte Klassifikation lernt.
+
+## S {.unnumbered}
+
+<span id="glossar-scp"></span>
+
+**SCP (Semi-Automatic Classification Plugin)**  
+QGIS-Plugin für typische Fernerkundungsabläufe: Bandsets, Indizes,
+Trainingsflächen, Klassifikation und Genauigkeitsprüfung.
+
+**Sentinel-2**  
+Europäische Satellitenmission mit multispektralen Daten. Sie ist im Kurs die
+zentrale Datenquelle für Vegetations- und Brandanalysen.
+
+**Spektralsignatur**  
+Muster der Reflexion über mehrere Bänder hinweg. Unterschiedliche Oberflächen
+haben oft unterschiedliche Signaturen.
+
+<span id="glossar-swir"></span>
+
+**SWIR**  
+Kurzwelliges Infrarot. SWIR-Bänder reagieren unter anderem auf Feuchte,
+Vegetationszustand und verbrannte Oberflächen.
+
+## T {.unnumbered}
+
+**Trainingsfläche**  
+Beispielfläche für eine Klasse. Trainingsflächen werden für die überwachte
+Klassifikation genutzt und müssen von Validierungsdaten getrennt bleiben.
+
+## U {.unnumbered}
+
+**Unüberwachte Klassifikation**  
+Automatische Gruppierung von Pixeln nach spektraler Ähnlichkeit. Die Gruppen
+müssen anschließend inhaltlich interpretiert werden.
+
+**Überwachte Klassifikation**  
+Klassifikation mit vorher definierten Trainingsflächen. Die Qualität hängt stark
+von Klassenlogik, Trainingsdaten und Referenzdaten ab.
+
+**Untersuchungsraum**  
+Räumlicher Ausschnitt, in dem die Fragestellung bearbeitet wird. Im Modul ist
+das der Brandfall Saalfelder Höhe/Gösselsdorf.
+
+## V {.unnumbered}
+
+**Validierung**  
+Prüfung, ob eine Karte belastbar ist. Validierung nutzt unabhängige
+Referenzdaten und beschreibt Fehler transparent.
+
+**Vektordaten**  
+Datenmodell aus Punkten, Linien und Polygonen. AOI, Wege, ROIs und
+Validierungspunkte werden im Kurs als Vektordaten geführt.
+
+## W {.unnumbered}
+
+<span id="glossar-wms"></span>
+
+**Web Map Service (WMS)**  
+Standardisierter Webdienst, der georeferenzierte Kartenbilder über das Internet
+bereitstellt. Sie können in QGIS angezeigt werden, ohne die zugrunde liegenden
+Rasterdateien lokal herunterzuladen.
+
+## Z {.unnumbered}
+
+**Zeitreihe**  
+Mehrere Aufnahmen desselben Gebiets zu unterschiedlichen Zeitpunkten. Zeitreihen
+helfen, Waldveränderungen von Aufnahmeeffekten zu unterscheiden.
